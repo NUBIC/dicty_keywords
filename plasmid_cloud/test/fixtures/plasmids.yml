@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  plasmid: MyString
+  ID: 1
+  keywords: MyText
+
+two:
+  plasmid: MyString
+  ID: 1
+  keywords: MyText

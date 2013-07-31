@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @keyword.word %>
+</p>
+
+<p>
+	<strong>Frequency:</strong>
+	<%= @keyword.frequency %>
+</p>
+
+<p>
+  <strong>Strains:</strong>
+  <% @keyword.strains.keys.each do |key| %>
+  	<br><%= link_to key, "http://dictybase.org/db/cgi-bin/dictyBase/phenotype/strain_and_phenotype_details.pl?genotype_id=" + @keyword.strains[key].to_s %>
+  <% end %>
+</p>

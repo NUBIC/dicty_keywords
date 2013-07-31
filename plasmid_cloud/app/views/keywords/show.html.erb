@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Word:</strong>
+  <%= @keyword.word %>
+</p>
+
+<p>
+	<strong>Frequency:</strong>
+	<%= @keyword.frequency %>
+</p>
+
+<p>
+  <strong>Plasmids:</strong>
+  <% @keyword.plasmids.keys.each do |key| %>
+  	<br><%= link_to key, "http://dictybase.org/db/cgi-bin/dictyBase/SC/plasmid_details.pl?id=" + @keyword.plasmids[key].to_s %>
+  <% end %>
+</p>
+<body>
+</body>

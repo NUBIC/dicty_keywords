@@ -1,0 +1,39 @@
+<h1>Listing keywords</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Frequency</th>
+      <th>Strains</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @keywords.each do |keyword| %>
+      <tr>
+        <td><%= keyword.word %></td>
+        <td><%= keyword.frequency %></td>
+        <td><% key_array = keyword.strains.keys %>
+              <% key_array.each do |key| %>
+              <% if key_array.index(key) == key_array.length - 1 %>
+                <%= key %>
+                <% else %>
+                  <%= key + "," %>
+                <% end %>
+              <% end %>
+            </td>
+        <td><%= link_to 'Show', keyword %></td>
+        <td><%= link_to 'Edit', edit_keyword_path(keyword) %></td>
+        <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Keyword', new_keyword_path %>

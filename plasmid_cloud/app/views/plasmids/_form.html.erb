@@ -1,0 +1,29 @@
+<%= form_for(@plasmid) do |f| %>
+  <% if @plasmid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plasmid.errors.count, "error") %> prohibited this plasmid from being saved:</h2>
+
+      <ul>
+      <% @plasmid.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :ID %><br>
+    <%= f.number_field :ID %>
+  </div>
+  <div class="field">
+    <%= f.label :keywords %><br>
+    <%= f.text_area :keywords %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
